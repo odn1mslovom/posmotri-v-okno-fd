@@ -53,6 +53,18 @@ ol {
   background-color: #D9D9D9;
 }
 
+/* Скрытие элементов разметки */
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+
 
 .content {
   display: grid;
@@ -66,6 +78,7 @@ ol {
 }
 
 .result__video-container {
+  position: relative;
   inline-size: 711px;
   block-size: 386px;
   margin-bottom: 16px;
@@ -85,12 +98,95 @@ ol {
   align-items: start;
 }
 
+.search-form__fieldset {
+  border: none;
+}
+
 .search-form__fieldset-title {
   margin-bottom: 5px;
   font-size: 18px;
   font-weight: 400;
   line-height: 1.2;
 }
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+}
+
+.search-form__pseudo-checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 19px;
+  height: 19px;
+  padding: 1px;
+  border-radius: 0;
+  border: 1px solid currentColor;
+  cursor: pointer;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: '';
+  display: block;
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+}
+
+.search-form__checkbox:focus {
+  outline: none;
+}
+
+.search-form__label:has(.search-form__checkbox:hover) {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.search-form__label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: fit-content;
+  cursor: pointer;
+}
+
+.search-form__textfield {
+  appearance: none;
+  display: inline-block;
+  min-inline-size: 225px;
+  min-block-size: 27px;
+  padding: 2px;
+  background-color: inherit;
+  border: none;
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  outline: none;
+  font-family: "Fira Sans Condensed", sans-serif;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.search-form__textfield::placeholder {
+  opacity: .7;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+}
+
+.search-form__label:has(:focus-visible){
+  outline: 1px solid currentColor;
+  outline-offset: 2px;
+}
+
+
 
 .content__details {
   display: flex;
@@ -111,6 +207,7 @@ ol {
 }
 
 .content__list-container {
+  position: relative;
   max-block-size: 534px;
   overflow-y: auto;
 }
