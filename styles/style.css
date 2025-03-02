@@ -112,6 +112,7 @@ ol {
   text-decoration: none;
 }
 
+/* основной контейнер */
 .content {
   display: grid;
   grid-template-columns: 711px 399px;
@@ -123,6 +124,8 @@ ol {
   padding: 133px 30px;
 }
 
+
+/* левая колонка */
 .result__video-container {
   position: relative;
   position: relative;
@@ -236,6 +239,8 @@ ol {
   outline-offset: 2px;
 }
 
+
+/* правая колонка */
 .content__details {
   display: flex;
   flex-direction: column;
