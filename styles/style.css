@@ -89,7 +89,7 @@ ol {
 .more-button {
   /* Ширина родителя минус 1px отступа с каждой стороны */
   inline-size: calc(100% - 2px);
-  margin: 1px;
+  margin: 30px 1px 1px 1px;
   align-self: center;
 }
 
@@ -145,10 +145,6 @@ ol {
   display: flex;
   justify-content: space-between;
   align-items: start;
-}
-
-.search-form__fieldset {
-  border: none;
 }
 
 .search-form__fieldset {
@@ -261,8 +257,8 @@ ol {
 
 .content__list-container {
   position: relative;
-  position: relative;
-  max-block-size: 534px;
+  inline-size: 390px;
+  block-size: 298px;
   overflow-y: auto;
 }
 
@@ -270,7 +266,6 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  margin-bottom: 30px;
 }
 
 .content__list-item {
